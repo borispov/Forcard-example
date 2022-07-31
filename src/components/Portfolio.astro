@@ -1,0 +1,101 @@
+---
+import Title from '../components/common/Title';
+
+const projects = [
+    {
+        title: "Ifat Hikri Shamay",
+        subtitle: "Psychotherapist",
+        keywords: ["Discovery", "Design", "Development"],
+        imgPath: "/portfolio/ifat.jpg"
+    },
+    {
+        title: "Oved Meir",
+        subtitle: "Psychotherapist",
+        keywords: ["Discovery", "Design", "Development"],
+        imgPath: "/portfolio/oved.jpg"
+    },
+    {
+        title: "Edita",
+        subtitle: "Photographer",
+        keywords: ["Discovery", "Design", "Development"],
+        imgPath: "/portfolio/edita.jpg"
+    },
+    {
+        title: "Shira Samutin",
+        subtitle: "Nail Education",
+        keywords: ["Sales Page", "Design & Development" ],
+        imgPath: "/portfolio/shira.jpg"
+    },
+    {
+        title: "Hadar Katz",
+        subtitle: "Psychotherapist",
+        keywords: ["Digital Business card", "Custom Design" ],
+        imgPath: "/portfolio/hadar.jpg"
+    },
+]
+
+---
+
+<div>
+    <div class="projects">
+        {
+            projects.map(project => (
+                <div class="project">
+                    <div class="project__description">
+                        <Title size="h2" class="project__title"> {project.title} </Title>
+                        <Title size="h3" class="project__subtitle"> {project.subtitle} </Title>
+                        <Title size="h4" class="project__keywords"> {project.keywords.join(" - ")} </Title>
+                    </div>
+                    <div class="project__img">
+                        <img src={project.imgPath} alt={project.title + project.subtitle}>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
+<style lang="scss">
+    .projects {
+        margin-top: 4em;
+    }
+
+    .project {
+        margin-top: 2.5em;
+        margin-bottom: 2.5em;
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            padding-inline: 2rem;
+            margin-bottom: 1em;
+
+            & > * {
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+
+        &__keywords {
+            font-size: 14px;
+            font-weight: 300;
+            align-self: flex-end;
+        }
+
+        &__title {
+            line-height: 150%;
+        }
+
+        &__subtitle {
+            font-weight: 400;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+    }
+</style>

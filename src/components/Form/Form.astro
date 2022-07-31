@@ -1,0 +1,27 @@
+---
+import { Form } from 'astro-forms';
+
+const schema = {
+  type: "object",
+  properties: {
+    name: {
+      type: "string",
+      title: "Name",
+    },
+    email: {
+      type: "string",
+      title: "Email",
+    },
+    password: {
+      type: "string",
+      title: "Password",
+    },
+    submit: {
+      type: "submit",
+      title: "Submit",
+    },
+  },
+} 
+---
+
+<Form schema={schema} action="/post" method="post" />

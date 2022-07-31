@@ -1,0 +1,32 @@
+---
+export interface Props {
+	title: string;
+    class?: string;
+    fold?: boolean;
+}
+
+const props = {...Astro.props} as Props;
+
+---
+
+
+<section class={props.class}>
+    <div class="container">
+        <slot />
+    </div>
+</section>
+
+<style>
+
+    section {
+        position: relative;
+        margin-inline: auto;
+
+
+        &.container {
+            padding: 1em .5em;
+        }
+    }
+
+
+</style>

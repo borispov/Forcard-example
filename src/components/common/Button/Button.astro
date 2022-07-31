@@ -1,0 +1,19 @@
+---
+const { link, bg, color } = Astro.props;
+---
+
+<a href={link} target="_blank">
+    <slot />
+</a>
+
+<style define:vars={{ bg, color }}>
+    a {
+        text-decoration: none;
+        padding: 12px 38px;
+        background: var(--bg);
+        color: var(--color);
+        border-radius: 12px;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,32 @@
+:root {
+    --dark: '#131313';
+}
+.header {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 15.5em;
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    max-height: inherit;
+    object-fit: cover;
+    transform: rotate(180deg);
+    filter: blur(1px);
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    background: radial-gradient(124.98% 61.94% at 44.5% 57.43%, #212403 0%, rgba(0, 0, 0, 0.72) 100%);
+    background: radial-gradient(124.98% 61.94% at 44.5% 57.43%, #ffc532 0%, rgba(0, 0, 0, 0.72) 100%);
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+}

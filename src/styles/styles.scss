@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@import "./fonts.scss";
+
+:root {
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+    --c-white: hsl(12, 0%, 100%);
+    --c-orange: hsl(43, 100%, 60%);
+    --c-gray: hsl(210, 11%, 14%);
+    --c-black: hsl(0, 0%, 7%);
+    --c-off-white: hsl(10, 21%, 95%);
+    --color-border: hsl(17, 24%, 90%);
+    --c-orange-shadow: hsla(43, 100%, 60%, 20);
+}
+
+$colors: 'black', 'orange', 'white', 'off-white', 'gray';
+
+@each $color in $colors {
+    .tc-#{$color} {
+        color: var(--c-#{color})
+    }
+    .bg-#{color} {
+        background: var(--c-#{color});
+    }
+}
+
+* {
+    box-sizing: content-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+}
+
+
+.title {
+    font-family: 'ChunkFiveEx';
+    font-size: 2.5rem;
+}
+
+.wrapper {
+    max-width: 32em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.f-reg {
+    font-weight: 400;
+}
+.f-bold {
+    font-weight: 700;
+}
+.f-light {
+    font-weight: 300;
+}
+
+.shadow-orange-hover {
+    transition: all 150ms ease-in-out;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 9px var(--c-orange-shadow);
+        transition: all 150ms ease-in-out;
+    }
+}

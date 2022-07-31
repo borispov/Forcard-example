@@ -1,0 +1,29 @@
+---
+const { width } = Astro.props;
+
+---
+
+<span>
+    <slot class="content" />
+    <svg class="underline" 
+        width={width || 128} 
+        height={12} 
+        viewBox={`0 0 ${width || 128} 12`} 
+        fill="none" xmlns="http://www.w3.org/2000/svg"
+    >
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.05491 2.7104C26.3232 -0.851705 48.8569 1.80818 73.9347 2.65107C90.5178 3.20089 109.831 4.98377 126.395 5.65784C126.892 5.67978 127.246 6.62686 127.187 7.78135C127.127 8.93582 122.306 8.62055 122.304 11.7035C123.458 7.85602 12.2714 -2.25684 0.983092 6.87965C0.483167 6.94822 0.0945968 6.07549 0.112767 4.92499C0.133927 3.7747 0.557581 2.78614 1.05491 2.7104Z" 
+        fill="#ECAC1D"/>
+    </svg>
+</span>
+
+<style>
+    span {
+        position: relative
+    }
+
+    .underline {
+        position: absolute;
+        bottom: -25%;
+        left: -5%;
+    }
+</style>

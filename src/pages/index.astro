@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/common/Link/Link.astro";
+import Section from "../components/common/Section/section.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Underline from "../components//common/Underline.astro";
+
+import Form from "../components/Form/Form.astro";
+
+import Header from "../components/Header/Header";
+import MainAvatar from "../components/Avatar/MainAvatar";
+import Links from "../components/Links/Links";
+
+import Logo from '/logo.png'
+import Title from "../components/common/Title";
+---
+
+<Layout title="Forweb Technologies">
+	<div class="main-wrapper">
+		<Header />
+		<MainAvatar img={Logo} />
+		<Links />
+
+		<Section title="We Unfold Visions" class="work-section" fold={true}>
+			<Title size="h2" weight="bold">
+				We <Underline width='90'>Unfold</Underline> <br> Visions
+			</Title>
+			<p>
+				We architect exceptional experiences for our clients and help them impact the world in a meaningful manner.
+				Every business holds a vision, we unfold it into the world.
+
+				Enjoy higher conversion rates
+				Happier customers
+				High value opportunities
+			</p>
+			<Link
+				href="https://wa.me/+972508564794"
+				title="Contact via WhatsApp"
+				externalInNewTab={true}
+			>
+				Start Now
+			</Link>
+
+		</Section>
+
+		<Section title="Our Work" class="portfolio">
+			<Title size="h2" weight="bold">
+				<Underline>Our Work</Underline>
+			</Title>
+			<Portfolio />
+		</Section>
+
+		<!-- <Form /> -->
+	</div>
+
+	<footer>
+		<h1 class="footer__logo">.forweb</h1>
+		<h5>by Boris Povolotsky</h5>
+	</footer>
+</Layout>
+
+<style lang="scss" is:global>
+
+	.footer__logo {
+		font-weight: 700;
+		font-family: "ChunkFiveEx";
+	}
+
+	$primary: #ffc532;
+
+	.main-wrapper {
+		max-width: 44em;
+		margin-right: auto;
+		margin-left: auto;
+		box-shadow: 4px 0 16px rgba(0,0,0,0.14),
+					-4px 0 16px rgba(0,0,0,0.1);
+	}
+
+	.work-section {
+		position: relative;
+		padding: 4em 2em;
+		background-color: #1F2327;
+		color: var(--c-white);
+		z-index: 9;
+		overflow: hidden;
+
+		
+	}
+
+	a.link {
+		display: inline-block;
+		text-decoration: none;
+		font-weight: bold;
+		color: #000;
+		background-color: $primary;
+		border-radius: 12px;
+		padding: 0.625em 3em;
+		margin-inline: auto;
+		transition: all 150ms ease-in;
+		box-shadow: 2px 2px 2px hsl(0, 0%, 0%);
+
+		&:hover {
+			background-color: lighten($primary, 5%);
+			transform-origin: 0px;
+			transform: translateY(-2px);
+			transition: all 150ms ease-out;
+			box-shadow: 4px 4px 0px hsl(0, 0%, 0%);
+		}
+		
+		&.primary {
+			background-color: black;
+			color: white;
+			box-shadow: 2px 2px 2px hsl(0, 0%, 35%);
+			transition: all 150ms ease-in-out;
+			&:hover {
+				transform: translateY(-1px);
+				transition: all 150ms ease-in-out;
+				box-shadow: 4px 4px 0px hsl(0, 0%, 35%);
+			}
+		}
+
+	}
+
+	p {
+		line-height: 150%;
+		text-align: center;
+		padding-bottom: 2em;
+		max-width: 35ch;
+		margin-inline: auto;
+	}
+
+
+
+</style>
